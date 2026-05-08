@@ -67,10 +67,10 @@ export const Checkout = () => {
         <form onSubmit={handleCheckout} className="space-y-8">
           <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
             <h2 className="text-xl font-bold mb-4">Shipping Information</h2>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input required type="text" placeholder="First Name" className="w-full border border-gray-200 rounded-lg p-3" />
               <input required type="text" placeholder="Last Name" className="w-full border border-gray-200 rounded-lg p-3" />
-              <input required type="text" placeholder="Address" className="w-full border border-gray-200 rounded-lg p-3 col-span-2" />
+              <input required type="text" placeholder="Address" className="w-full border border-gray-200 rounded-lg p-3 sm:col-span-2" />
               <input required type="text" placeholder="City" className="w-full border border-gray-200 rounded-lg p-3" />
               <input required type="text" placeholder="Postal Code" className="w-full border border-gray-200 rounded-lg p-3" />
             </div>
@@ -80,7 +80,7 @@ export const Checkout = () => {
             <h2 className="text-xl font-bold mb-4">Payment Method (Fake)</h2>
             <div className="space-y-4">
               <input required type="text" placeholder="Card Number" className="w-full border border-gray-200 rounded-lg p-3" />
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input required type="text" placeholder="MM/YY" className="w-full border border-gray-200 rounded-lg p-3" />
                 <input required type="text" placeholder="CVC" className="w-full border border-gray-200 rounded-lg p-3" />
               </div>

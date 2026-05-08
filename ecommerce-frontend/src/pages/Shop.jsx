@@ -66,12 +66,24 @@ export const Shop = () => {
     dispatch({ type: 'SET_SEARCH_QUERY', payload: e.target.value });
   };
 
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+
   return (
     <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row gap-8">
       {/* Sidebar Filters */}
       <aside className="w-full md:w-64 shrink-0">
-        <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm sticky top-28">
-          <div className="flex items-center gap-2 font-bold text-lg mb-6 pb-4 border-b border-gray-100">
+        <button 
+          onClick={() => setIsFilterOpen(!isFilterOpen)}
+          className="w-full md:hidden flex items-center justify-between bg-white p-4 rounded-xl border border-gray-100 shadow-sm mb-4"
+        >
+          <div className="flex items-center gap-2 font-bold">
+            <SlidersHorizontal className="w-5 h-5" /> Filters
+          </div>
+          <ChevronDown className={`w-5 h-5 transition-transform ${isFilterOpen ? 'rotate-180' : ''}`} />
+        </button>
+
+        <div className={`${isFilterOpen ? 'block' : 'hidden'} md:block bg-white p-6 rounded-2xl border border-gray-100 shadow-sm sticky top-28`}>
+          <div className="hidden md:flex items-center gap-2 font-bold text-lg mb-6 pb-4 border-b border-gray-100">
             <SlidersHorizontal className="w-5 h-5" /> Filters
           </div>
 

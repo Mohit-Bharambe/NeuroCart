@@ -44,7 +44,7 @@ export const Home = () => {
             <Sparkles className="w-4 h-4" />
             <span>AI-Powered Shopping Experience</span>
           </div>
-          <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-primary mb-6 animate-in fade-in slide-in-from-bottom-6 duration-700">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-primary mb-6 animate-in fade-in slide-in-from-bottom-6 duration-700">
             Future of Commerce is <br className="hidden md:block"/> 
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-600">
               Intelligent.
