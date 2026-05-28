@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { api } from '../services/api';
 import { useAppContext } from '../context/AppContext';
+import { useToast } from '../components/Toast';
 import { Star, ShieldCheck, Truck, ArrowLeft, Heart, ShoppingBag } from 'lucide-react';
 
 export const ProductDetail = () => {
   const { id } = useParams();
   const { state, dispatch } = useAppContext();
+  const { addToast } = useToast();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -47,6 +49,20 @@ export const ProductDetail = () => {
 
   const isWishlisted = state.wishlist.some(item => item.id === product.id);
 
+  const handleWishlist = () => {
+    dispatch({ type: 'TOGGLE_WISHLIST', payload: product });
+    if (isWishlisted) {
+      addToast(`${product.name} removed from wishlist`, 'info');
+    } else {
+      addToast(`${product.name} added to wishlist!`, 'wishlist');
+    }
+  };
+
+  const handleAddToCart = () => {
+    dispatch({ type: 'ADD_TO_CART', payload: product });
+    addToast(`${product.name} added to cart!`, 'cart');
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-6 py-8">
       <Link to="/shop" className="inline-flex items-center gap-2 text-gray-500 hover:text-primary mb-8 transition-colors">
@@ -63,7 +79,7 @@ export const ProductDetail = () => {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <button 
-              onClick={() => dispatch({ type: 'TOGGLE_WISHLIST', payload: product })}
+              onClick={handleWishlist}
               className="absolute top-6 right-6 p-4 rounded-full bg-white/80 backdrop-blur shadow-sm hover:bg-white text-gray-600 hover:text-red-500 transition-colors"
             >
               <Heart className={`w-6 h-6 ${isWishlisted ? 'fill-red-500 text-red-500' : ''}`} />
@@ -99,7 +115,7 @@ export const ProductDetail = () => {
           </div>
 
           <button 
-            onClick={() => dispatch({ type: 'ADD_TO_CART', payload: product })}
+            onClick={handleAddToCart}
             className="w-full sm:w-auto bg-primary hover:bg-gray-800 text-white px-10 py-5 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-3"
           >
             <ShoppingBag className="w-6 h-6" /> Add to Cart

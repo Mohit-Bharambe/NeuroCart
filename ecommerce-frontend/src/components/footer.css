@@ -1,81 +1,242 @@
- footer {
-            background-color: #f1f5f9;
-            padding: 80px 0;
-            /* 5rem */
-            width: 100%;
-        }
+/* ======== NEUROCART FOOTER ======== */
 
-        .footer-container {
-            max-width: 1536px;
-            margin: 0 auto;
-            padding: 0 64px;
-            /* 4rem */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-        }
+.nc-footer {
+  background: linear-gradient(to bottom, #0d0d14, #08080c);
+  color: #e2e8f0;
+  margin-top: auto;
+}
 
-        @media (min-width: 768px) {
-            .footer-container {
-                flex-direction: row;
-            }
+.nc-footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 72px 40px 48px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 48px;
+}
 
-            .footer-logo {
-                margin-bottom: 0;
-            }
+/* Brand column */
+.nc-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-            .footer-copyright {
-                margin-top: 0;
-            }
-        }
+.nc-footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Manrope', 'Inter', sans-serif;
+}
 
-        .footer-logo {
-            font-size: 18px;
-            /* 1.125rem */
-            font-weight: 900;
-            letter-spacing: -0.9px;
-            /* -0.05em */
-            color: #020617;
-            margin-bottom: 32px;
-            /* 2rem */
-        }
+.nc-footer-tagline {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #94a3b8;
+  max-width: 280px;
+  margin: 0;
+}
 
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            /* 2.5rem */
-            font-size: 10px;
-            /* 0.625rem */
-            text-transform: uppercase;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            /* 0.05em */
-        }
+/* Newsletter input */
+.nc-footer-newsletter {
+  margin-top: 8px;
+}
 
-        .footer-links a {
-            color: #64748b;
-            text-decoration: underline;
-            text-underline-offset: 8px;
-            opacity: 0.7;
-            transition: opacity 0.5s ease, color 0.3s ease;
-        }
+.nc-footer-newsletter-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 6px 6px 6px 14px;
+  max-width: 280px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
 
-        .footer-links a:hover {
-            opacity: 1;
-            color: #020617;
-        }
+.nc-footer-newsletter-input:focus-within {
+  border-color: rgba(59, 130, 246, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
 
-        .footer-copyright {
-            margin-top: 48px;
-            /* 3rem */
-            font-size: 10px;
-            /* 0.625rem */
-            text-transform: uppercase;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            /* 0.05em */
-            color: #64748b;
-        }
+.nc-footer-newsletter-input input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e2e8f0;
+  font-size: 13px;
+  padding: 8px 0;
+  min-width: 0;
+}
+
+.nc-footer-newsletter-input input::placeholder {
+  color: #64748b;
+}
+
+.nc-footer-newsletter-input button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #3b82f6;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.nc-footer-newsletter-input button:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+/* Link columns */
+.nc-footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nc-footer-col-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #94a3b8;
+  margin: 0 0 4px 0;
+}
+
+.nc-footer-col-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nc-footer-col-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.nc-footer-col-links a:hover {
+  color: #ffffff;
+  padding-left: 4px;
+}
+
+/* Bottom bar */
+.nc-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nc-footer-bottom-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.nc-footer-copyright {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Social icons */
+.nc-footer-socials {
+  display: flex;
+  gap: 8px;
+}
+
+.nc-footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.nc-footer-social-icon:hover {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+/* Legal links */
+.nc-footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.nc-footer-legal a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nc-footer-legal a:hover {
+  color: #cbd5e1;
+}
+
+.nc-footer-dot {
+  color: #334155;
+}
+
+/* ======== RESPONSIVE ======== */
+
+@media (max-width: 1024px) {
+  .nc-footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 56px 32px 40px;
+  }
+
+  .nc-footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .nc-footer-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 48px 24px 32px;
+  }
+
+  .nc-footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 24px;
+    gap: 12px;
+  }
+
+  .nc-footer-newsletter-input {
+    max-width: 100%;
+  }
+}
